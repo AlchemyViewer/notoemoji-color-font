@@ -8,8 +8,8 @@ TMP := /dev/shm
 # Where to find scfbuild?
 SCFBUILD := SCFBuild/bin/scfbuild
 
-VERSION := 15.0.3
-FONT_PREFIX := TwitterColorEmoji-SVGinOT
+VERSION := 15.1
+FONT_PREFIX := NotoColorEmoji-SVGinOT
 REGULAR_FONT := build/$(FONT_PREFIX).ttf
 REGULAR_PACKAGE := build/$(FONT_PREFIX)-$(VERSION)
 MACOS_FONT := build/$(FONT_PREFIX)-MacOS.ttf
@@ -33,7 +33,7 @@ endif
 
 # There are two SVG source directories to keep the assets separate
 # from the additions
-SVG_TWEMOJI := assets/twemoji-svg
+SVG_TWEMOJI := assets/notoemoji-svg
 # Currently empty
 SVG_EXTRA := assets/svg
 # B&W only glyphs which will not be processed.
@@ -57,7 +57,7 @@ fast:
 	make -j $(CPU_CORES)
 
 update:
-	cp ../twemoji/assets/svg/* assets/twemoji-svg/
+	cp ../notoemoji/assets/svg/* assets/notoemoji-svg/
 
 # Create the operating system specific packages
 package: regular-package linux-package deb-package macos-package windows-package
